@@ -1,0 +1,138 @@
+# yaml-language-server: $schema=https://github.com/epics-containers/ibek/releases/download/2.0.2/ibek.support.schema.json
+
+module: hirflPS
+
+entity_models:
+  - name: rampingPS
+    description: |-
+      Ramping mode PowerSupply IOC.
+    parameters:
+      AREA:
+        type: str
+        description: |-
+          The area name of the PowerSupply location
+
+      PS_SN:
+        type: str
+        description: |-
+          The ID of the PowerSupply
+
+      DATA_IP:
+        type: str
+        description: |-
+          IP address of the ramping PS device IOC
+      
+      DATA_PORT:
+        type: str
+        description: |-
+          IP port of the ramping PS device IOC
+
+      DTYPE:
+        type: str
+        description: |-
+          Type of the PowerSupply
+      
+      IP:
+        type: str
+        description: |-
+          IP of the PowerSupply
+      
+      PORT:
+        type: str
+        description: |-
+          Port of the PowerSupply
+
+      PARM:
+        type: str
+        description: |-
+          Some init parameters
+        
+    databases:
+      - file: $(HIRFLPS)/db/dbRampingPS.db
+        args:
+          AREA:
+          PS_SN:
+          DATA_PORT:
+          DATA_IP:
+          DTYPE:
+          IP:
+          PORT:
+          PARM:
+
+
+  - name: DCPSSerial
+    description: |-
+      DC mode serial port PowerSupply IOC.
+    parameters:
+      AREA:
+        type: str
+        description: |-
+          The area name of the PowerSupply location
+
+      PS_SN:
+        type: str
+        description: |-
+          The ID of the PowerSupply
+      
+      IP:
+        type: str
+        description: |-
+          IP of the serial server to PowerSupply
+      
+      PORT:
+        type: str
+        description: |-
+          Port of the serial server to PowerSupply
+
+      PARM:
+        type: str
+        description: |-
+          Some init parameters
+        
+    databases:
+      - file: $(HIRFLPS)/db/dbDigitalDCSerialPS.db
+        args:
+          AREA:
+          PS_SN:
+          IP:
+          PORT:
+          PARM:   
+  
+  - name: DCPSEthernet
+    description: |-
+      DC mode ethernet port PowerSupply IOC.
+    parameters:
+      AREA:
+        type: str
+        description: |-
+          The area name of the PowerSupply location
+
+      PS_SN:
+        type: str
+        description: |-
+          The ID of the PowerSupply
+      
+      IP:
+        type: str
+        description: |-
+          IP of the PowerSupply
+      
+      PORT:
+        type: str
+        description: |-
+          Port of the PowerSupply
+
+      PARM:
+        type: str
+        description: |-
+          Some init parameters
+        
+    databases:
+      - file: $(HIRFLPS)/db/dbDigitalDCSerialPS.db
+        args:
+          AREA:
+          PS_SN:
+          IP:
+          PORT:
+          PARM:
+        
