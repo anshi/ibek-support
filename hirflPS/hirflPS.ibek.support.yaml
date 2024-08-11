@@ -28,7 +28,7 @@ entity_models:
           IP port of the ramping PS device IOC
 
       DTYPE:
-        type: str
+        type: int
         description: |-
           Type of the PowerSupply
       
